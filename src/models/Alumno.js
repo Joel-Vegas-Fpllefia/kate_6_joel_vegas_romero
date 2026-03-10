@@ -26,7 +26,7 @@ const alumnoSchema = new mongoose.Schema(
     },
     urlImagen: {
       type: String,
-      required: [true, "La URL de la imagen es obligatoria"],
+      required: false,
       trim: true,
     },
   },
