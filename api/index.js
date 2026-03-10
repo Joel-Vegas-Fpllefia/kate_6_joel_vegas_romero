@@ -17,17 +17,22 @@ app.use(express.urlencoded({ extended: true }));
 // Conectar a la base de datos (reutilizar conexión existente en serverless)
 const connectDatabase = async () => {
   if (mongoose.connection.readyState === 0) {
+    console.log('Intentando conectar a MongoDB Atlas...');
     try {
       const MONGODB_URI = process.env.MONGODB_URI;
       if (!MONGODB_URI) {
+        console.error('MONGODB_URI no está definida');
         throw new Error('MONGODB_URI no está definida');
       }
+      console.log('URI encontrada, conectando...');
       await mongoose.connect(MONGODB_URI);
-      console.log('✅ Conectado a MongoDB Atlas');
+      console.log('✅ Conectado a MongoDB Atlas exitosamente');
     } catch (error) {
       console.error('❌ Error conectando a la base de datos:', error.message);
       throw error;
     }
+  } else {
+    console.log('Conexión DB ya existe, readyState:', mongoose.connection.readyState);
   }
 };
 
