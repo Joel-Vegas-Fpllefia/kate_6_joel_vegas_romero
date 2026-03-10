@@ -1,0 +1,1 @@
+// Methodos del LocalStorage
