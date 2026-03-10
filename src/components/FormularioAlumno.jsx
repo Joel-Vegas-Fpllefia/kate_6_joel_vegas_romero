@@ -77,7 +77,7 @@ function FormularioAlumno({
               placeholder="Nom"
               value={name_edit}
               onChange={(event) => setNameEdit(event.target.value)}
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all text-black"
             />
           </div>
 
@@ -91,7 +91,7 @@ function FormularioAlumno({
               placeholder="Cognoms"
               value={cognom_edit}
               onChange={(event) => setCognomEdit(event.target.value)}
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all text-black"
             />
           </div>
 
@@ -105,7 +105,7 @@ function FormularioAlumno({
               placeholder="email@example.com"
               value={email_edit}
               onChange={(event) => setEmailEdit(event.target.value)}
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all text-black"
             />
           </div>
 
@@ -117,7 +117,7 @@ function FormularioAlumno({
             <select
               value={curso_edit}
               onChange={(event) => setCursoEdit(event.target.value)}
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all text-black"
             >
               <option value="">Seleccionar Curso</option>
               <option value="DAW">DAW</option>
@@ -137,7 +137,7 @@ function FormularioAlumno({
               placeholder="https://ejemplo.com/foto.jpg"
               value={url_img}
               onChange={(event) => setImg(event.target.value)}
-              className="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all"
+              className="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-indigo-100 focus:border-indigo-500 outline-none transition-all text-black"
             />
           </div>
 
