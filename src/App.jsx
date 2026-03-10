@@ -36,7 +36,7 @@ function App() {
   // Función para cargar alumnos desde la API
   const loadAlumnos = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/alumnos`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/alumnos`);
       if (!response.ok) {
         throw new Error("Error al cargar alumnos");
       }
@@ -105,7 +105,7 @@ function App() {
   async function delete_user(alumnoId) {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/alumnos/${alumnoId}`,
+        `${import.meta.env.VITE_API_URL}/api/alumnos/${alumnoId}`,
         {
           method: "DELETE",
         },
@@ -145,7 +145,7 @@ function App() {
         curso: curso_edit,
         urlImagen: url_img,
       };
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/alumnos`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/alumnos`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -183,7 +183,7 @@ function App() {
         urlImagen: url_img,
       };
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/alumnos/${user_id}`,
+        `${import.meta.env.VITE_API_URL}/api/alumnos/${user_id}`,
         {
           method: "PUT",
           headers: {
