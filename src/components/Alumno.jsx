@@ -23,7 +23,7 @@ function Alumno({ alumnos, esAdmin, delete_user, onEdit }) {
           <div className="flex items-center gap-4 p-5">
             <div className="h-16 w-16 flex-shrink-0 overflow-hidden rounded-full ring-2 ring-indigo-500 ring-offset-2">
               {/* Enviamos la imagen de perfil del alumno */}
-              <Avatar profile_image={alumno.url}></Avatar>
+              <Avatar profile_image={alumno.urlImagen}></Avatar>
             </div>
 
             <div className="overflow-hidden">
