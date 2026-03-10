@@ -38,7 +38,7 @@ function App() {
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/api/alumnos`);
       if (!response.ok) {
-        throw new Error("Error al cargar alumnos");
+        throw new Error(`Error al cargar alumnos: ${response.status} ${response.statusText}`);
       }
       const data = await response.json();
       setStudentsState(data);
