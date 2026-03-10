@@ -4,11 +4,12 @@ const mongoose = require('mongoose');
 const alumnosRoutes = require('../src/routes/alumnos.routes.js');
 
 const app = express();
-const FRONTEND_URL = process.env.FRONTEND_URL || '*';
 
 // Middleware
 app.use(cors({
-  origin: FRONTEND_URL,
+  origin: '*', // Permite cualquier dominio
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
