@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const alumnosRoutes = require('../routes/alumnos.routes.js');
+const alumnosRoutes = require('../src/routes/alumnos.routes.js');
 
 const app = express();
 const FRONTEND_URL = process.env.FRONTEND_URL || '*';
