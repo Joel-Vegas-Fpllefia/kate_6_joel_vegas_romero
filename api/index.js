@@ -1,7 +1,7 @@
-import express from 'express';
-import cors from 'cors';
-import mongoose from 'mongoose';
-import alumnosRoutes from '../routes/alumnos.routes.js';
+const express = require('express');
+const cors = require('cors');
+const mongoose = require('mongoose');
+const alumnosRoutes = require('../routes/alumnos.routes.js');
 
 const app = express();
 const FRONTEND_URL = process.env.FRONTEND_URL || '*';
@@ -72,4 +72,4 @@ app.use((err, req, res, next) => {
 });
 
 // Exportar para Vercel (serverless function)
-export default app;
+module.exports = app;

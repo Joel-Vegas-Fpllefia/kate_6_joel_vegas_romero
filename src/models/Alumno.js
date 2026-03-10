@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const alumnoSchema = new mongoose.Schema(
   {
@@ -42,4 +42,4 @@ alumnoSchema.index({ nombre: "text", apellidos: "text" });
 
 const Alumno = mongoose.model("Alumno", alumnoSchema);
 
-export default Alumno;
+module.exports = Alumno;

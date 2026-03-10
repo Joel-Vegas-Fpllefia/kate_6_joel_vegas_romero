@@ -1,9 +1,9 @@
-import Alumno from "../models/Alumno.js";
+const Alumno = require("../models/Alumno.js");
 
 /**
  * Obtener todos los alumnos
  */
-export const getAllAlumnos = async (req, res) => {
+const getAllAlumnos = async (req, res) => {
   try {
     const alumnos = await Alumno.find().sort({ createdAt: -1 });
     res.json(alumnos);
@@ -18,7 +18,7 @@ export const getAllAlumnos = async (req, res) => {
 /**
  * Obtener un alumno por ID
  */
-export const getAlumnoById = async (req, res) => {
+const getAlumnoById = async (req, res) => {
   try {
     const { id } = req.params;
     const alumno = await Alumno.findById(id);
@@ -36,7 +36,7 @@ export const getAlumnoById = async (req, res) => {
   }
 };
 
-export const createAlumno = async (req, res) => {
+const createAlumno = async (req, res) => {
   try {
     console.log("Creating alumno with body:", req.body);
     const { nombre, apellidos, email, curso, urlImagen } = req.body;
@@ -72,7 +72,7 @@ export const createAlumno = async (req, res) => {
 /**
  * Actualizar un alumno
  */
-export const updateAlumno = async (req, res) => {
+const updateAlumno = async (req, res) => {
   try {
     const { id } = req.params;
     const { nombre, apellidos, email, curso, urlImagen } = req.body;
@@ -99,7 +99,7 @@ export const updateAlumno = async (req, res) => {
 /**
  * Eliminar un alumno
  */
-export const deleteAlumno = async (req, res) => {
+const deleteAlumno = async (req, res) => {
   try {
     const { id } = req.params;
     const alumno = await Alumno.findByIdAndDelete(id);
@@ -120,7 +120,7 @@ export const deleteAlumno = async (req, res) => {
 /**
  * Filtrar alumnos por curso
  */
-export const getAlumnosByPromocion = async (req, res) => {
+const getAlumnosByPromocion = async (req, res) => {
   try {
     const { promocion } = req.params;
     const alumnos = await Alumno.find({ curso: promocion }).sort({
@@ -138,7 +138,7 @@ export const getAlumnosByPromocion = async (req, res) => {
 /**
  * Buscar alumnos por nombre o apellidos
  */
-export const searchAlumnos = async (req, res) => {
+const searchAlumnos = async (req, res) => {
   try {
     const { q } = req.query;
 
@@ -162,4 +162,14 @@ export const searchAlumnos = async (req, res) => {
       message: error.message,
     });
   }
+};
+
+module.exports = {
+  getAllAlumnos,
+  getAlumnoById,
+  createAlumno,
+  updateAlumno,
+  deleteAlumno,
+  getAlumnosByPromocion,
+  searchAlumnos,
 };
